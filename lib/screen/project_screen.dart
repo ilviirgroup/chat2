@@ -49,6 +49,8 @@ class _ProjectScreenState extends State<ProjectScreen> {
             List<ProjectsObj> project = [];
             for (var item in projects) {
               final name = item.data()['project'];
+
+
               final projectObj = ProjectsObj(
                 name: name,
               );
@@ -73,23 +75,25 @@ class ProjectsObj extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: RaisedButton(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+      decoration: BoxDecoration(color: Colors.cyan,boxShadow: [BoxShadow(spreadRadius: 2.0,blurRadius: 6.0,color: Colors.black.withOpacity(0.1),
+      )]),
 
-        onPressed: () {
-          print('basyldy');
-        },
-         color: Colors.greenAccent,
 
-        child: ListTile(
+          child: ListTile(
           onTap: () {
             Navigator.pushNamed(context, DescriptionScreen.id);
           },
-          leading: Text('1'),
-          title: Text(name),
-          trailing: Text('descrip'),
+
+          contentPadding: EdgeInsets.all(5.0),
+
+          title: Text(name,style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold,color: Colors.white),),
+
+
         ),
-        ),
+      ),
     );
   }
 }

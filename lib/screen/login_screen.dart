@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 200.0),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.center,
+                  //textAlign: TextAlign.center,
                   onChanged: (value){
                     email = value;
                 },
